@@ -327,14 +327,17 @@ h2.slogan{
 	font-size: 18px;
 	padding: 0 0 0 20px;
 }
-.progress li span.photoshop{width: 100%;}
-.progress li span.illustrator{width: 70%;}
-.progress li span.indesign{width: 40%;}
-.progress li span.flash{width: 80%;}
-.progress li span.html{width: 75%;}
-.progress li span.wordpress{width: 85%;}
-.progress li span.jquery{width: 70%;}
-.progress li span.seo{width: 40%;}
+.progress li span.unity{width: 100%;}
+.progress li span.csharp{width: 100%;}
+.progress li span.blender{width: 75%;}
+.progress li span.art{width: 70%;}
+.progress li span.javascript{width: 65%;}
+.progress li span.python{width: 75%;}
+.progress li span.html{width: 60%;}
+.progress li span.php{width: 55%;}
+.progress li span.mysql{width: 45%;}
+.progress li span.cplusplus{width: 35%;}
+.progress li span.lua{width: 35%;}
 .plagin_list{
 	width: 100%;
 	overflow: hidden;
@@ -372,6 +375,12 @@ h2.slogan{
 .plagin_list.none{display: none;}
 
 /*portfolio*/
+.portfolio_holder{
+	display: block;
+	width: 1000px;
+	margin: auto;
+}
+
 .sub_nav {
 	position: relative;
 	display: table;
