@@ -1,4 +1,14 @@
 $(document).ready(function() {
+	//video stuff
+	/*
+	var video = $(".video")
+	var theaterToggle = $(".theater-toggle")
+
+	theaterToggle.click(function(){
+		video.toggleClass("theater");
+	});
+	*/
+  
 	$(".item-list li").mouseenter(function(){  
         $(this).find($('.item-list .hover')).stop(true, true).fadeIn(600);
         return false;

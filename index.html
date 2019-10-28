@@ -19,23 +19,44 @@
 	<div id="wrapper">
 		<div class="wrapper-holder">
 			<header id="header">
-				<h1 class="logo">Jesse Hallinen</h1>
-				<h2 class="slogan">Game development, mostly</h2>
+				<!--div class="video-background"-->
+					<!--div class="video-foreground"-->
+						<!--iframe src="https://www.youtube.com/embed/iAIpTYCD7gg?controls=0&showinfo=0&rel=0&autoplay=1&loop=1"
+						frameborder="0" allowfullscreen></iframe-->
+						<h1 class="logo">Jesse Hallinen</h1>
+						<h2 class="slogan">Game development, mostly</h2>
+					<!--/div-->
+				<!--/div-->
 			</header>
 		</div>
 		<div class="wrapper-holder grey">
 			<section id="main">
-				<div class="column">
-					<h2>About me</h2>
-					<p>I have used C# actively since 2010 and Unity game engine since 2012, so I have a pretty good understanding about those.<br/><br/>
-					In 2014 I registered myself as a sole proprietor and started to develop mobile games using Unity and C#.
-					I'm capable of 3D modeling and digital art to a certain degree and I make the most of the 3D models and textures/art I use in my games by myself.<br/><br/>
-					I have a Bachelor's degree in Software engineering from the JAMK University of Applied Sciences.<br/><br/>
-					I spent three months making mobile games in a mobile game company called Star Arcade as a part of my practical training.
-					I also spent two months doing automated tests using the Robot framework and Selenium in a JAMK's own project.<br/><br/>
-					I have also done some hobby projects using varying technologies like Python, Tensorflow, JavaScript, HTML, PHP, MySQL, C++ and Lua.
-					<br/><br/>
-					</p>
+				<h2>About me</h2>
+				<div class="about_holder">
+					<div class="column">
+						<p>I have used C# actively since 2010 and Unity game engine since 2012, so I have a pretty good understanding about those.
+						<br/><br/>
+						In 2014 I registered myself as a sole proprietor and started to develop mobile games using Unity and C#.
+						I'm capable of 3D modeling and digital art to a certain degree and I make the most of the 3D models and textures/art I use in my
+						games by myself.
+						<br/><br/>
+						I have a Bachelor's degree in Software engineering from the JAMK University of Applied Sciences.
+						<br/><br/>
+						I spent three months making mobile games in a mobile game company called Star Arcade as a part of my practical training.
+						I also spent two months doing automated tests using the Robot framework and Selenium in a JAMK's own project.
+						<br/><br/>
+						I have also done some hobby projects using varying technologies like Python, Tensorflow, JavaScript, HTML, PHP, MySQL, C++ and Lua.
+						</p>
+					</div>
+					<div class="column-add">
+						<p>Jesse Hallinen<br/>
+						23.12.1990<br/>
+						Tavaratie 5<br/>
+						42800 Haapamäki<br/>
+						0504123997<br/>
+						<a href = "mailto: hallinenjesse@gmail.com">hallinenjesse@gmail.com</a><br/>
+						</p>
+					</div>
 				</div>
 				<h2>My skills</h2>
 				<div class="skills_holder">
@@ -61,13 +82,239 @@
 				</div>
 				<h2>My creations</h2>
 				<div class="portfolio_holder">
-					<video controls="controls" width=960 height=540>
-						<source src="media/compilation.mp4" type="video/mp4" media="only screen and (min-device-width: 568px)">
-						<source src="media/compilation_small.mp4" type="video/mp4" media="only screen and (max-device-width: 568px)">
-						<source src="media/compilation.ogv" type="video/ogg">
-						<source src="media/compilation.webm" type="video/webm">
-						Your browser does not support the HTML5 Video element.
-					</video>
+					<p>Here is a short compilation video of some of my game projects.
+					Below it you can find more detailed videos and information on some of the projects.</p>
+					<br/>
+					<iframe width="960" height="540" src="https://www.youtube.com/embed/kMjPq600ow4?rel=0" frameborder="0"
+					allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/tcUExM5Jo_g?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column column-add">
+						<h3>Survival FPS game with magic</h3>
+						<p>A first-person shooter survival game with magic. The goal of this project was to make a local multiplayer split-screen game
+						with as many AI enemies as possible.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The very annoying problem with Unity is that it doesn't really support split-screen games. Unity doesn't allow multiple
+						audio listeners	or event systems, so the only option is to write some scripts yourself but it is hard to get them working
+						properly in every situation. Audio listener problem can be solved by keeping the audio listener in same position and moving
+						audio sources around it in relation to the every player position. The event system problem can be solved by modifying the
+						GUISystem files in UnityExtensions folder to allow multiple eventsystems or by writing some scripts on top of the eventsystem.
+						Both of the solutions are cumbersome.
+						<br/><br/>
+						The other obvious problem was how to get hundreds of enemies and still get high framerate. There are many small things to do
+						to improve fps but one of the biggest things was to find out how to make the enemies be as lightweight as possible. After
+						testing every combination this is what I found out:
+							<ul>
+								<li>An enemy model made from boxes vs a few hundred polygon model. A noticeable fps difference so if only want as many
+								enemies as possible then use the box model.</li>
+								<li>Enemy ragdolls. These are heavy so better not to use</li>
+								<li>Accurate hit colliders for every limb. Kind of heavy so better not to use unless really want to be able to shoot enemies
+								in the foot or arm.</li>
+								<li>NavMeshAgent vs custom solution. NavMeshAgents are actually pretty fast so they can be used.</li>
+								<li>Enemy rigidbodies. Somewhat heavy so better not to use.</li>
+								<li>Rigging and animations in Blender vs Unity animations with no rigging which requires separate game objects for every
+								limb. Using Blender for rigging and animations was the more lightweight solution.</li>
+								<li>Using only the minimum amount of bones in enemy skeletons gave some extra fps.</li>
+								<li>Removing all the unnecessary child transforms from the enemy game objects, like IK bones. This gave a few more fps.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<h3>Castles in War</h3>
+						<p>A strategy game where a player needs to conquer the enemy castles. The castles have multiple
+						different upgrade options and there are also gold mines which generate gold faster than castles.
+						The game is designed for mobile devices and was published in App Store and Google Play,
+						but currently it's only available in
+						<a href="https://play.google.com/store/apps/details?id=com.Hoarfrost.CastlesinWar&hl=en_US">Google Play</a>.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The knights couldn't be individual game objects because performance was too bad. The solution was to parent every
+						knight in a same queue under an other game object and then move that queue object back and forth to create an
+						illusion of the knights continuously moving forward. This created a new problem: cutting knight queue at the correct
+						position. This was solved by calculating how many knights fit between the cut position and the end of the queue object.</p>
+					</div>
+					<div class="column column-add">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/w7ELu5iCnuQ?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/GRoHxKsAD1I?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column column-add">
+						<h3>Spaceship flying in an asteroid belt</h3>
+						<p>A local multiplayer split-screen game with a procedurally generated asteroid belt and a spaceship flying through it dodging
+						asteroids.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The same split-screen problems as in the Survival FPS game with magic.</p>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<h3>Stair Runner</h3>
+						<p>An endless runner type of game. It is designed for mobile devices and
+						was published in App Store and Google Play, but currently it's only available in
+						<a href="https://play.google.com/store/apps/details?id=com.Hoarfrost.StairRunner&hl=en_US">Google Play</a>.
+						The point of the game is simply to tap the screen when a step turns green. The game has worldwide leaderboards
+						and you can share your result with your friends. Also it has multiple characters to unlock.</p>
+					</div>
+					<div class="column column-add">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/Cqv5PHNuD3w?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/Ot8K9K-IOP8?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column column-add">
+						<h3>Rabbit vs Tortoise</h3>
+						<p>A game inspired by the classic tale called The Tortoise and the Hare. The player plays as the rabbit and tries to win the
+						tortoise in a running race. There are would be multiple procedurally generated levels and all kinds of obstacles the rabbit must
+						avoid.</p>
+						<h4>Development problems and solutions</h4>
+						<p>It required a lot of thinking to spawn obstacles in a way that they wouldn't create impassable situations.</p>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<h3>Dwarven Platoon</h3>
+						<p>A kind of endless runner type game where the group of dwarves must run as far as they can while avoiding deadly traps.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The problem was the navigation because Unity didn't support stitching navMeshes together properly. I tried to use some beta
+						version of the new Unity navMesh but it was in a too early stage of development. So finally I wrote a simple navigation myself.</p>
+					</div>
+					<div class="column column-add">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/PmVFSI1zw-A?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/KPe8sBva4fg?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column column-add">
+						<h3>King's Castle TD</h3>
+						<p>A tower defence game where the player needs to protect the king from the monsters. The twist here is that the player
+						can build walls to change the route the monsters can take. The towers can be build on top of the walls.
+						<h4>Development problems and solutions</h4>
+						<p>There could be so many monsters at the same time that towers couldn't just loop through every monster and calculate
+						which one was closest to the king. This was solved by splitting the map area into multiple squares called buckets. Each bucket
+						hold the list of the monsters which currently were in the bucket's area. Then each tower needed only to check the buckets closest
+						to it.</p>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<h3>World Conquering Game</h3>
+						<p>A turn-based strategy game where the player needs to conquer the whole world. Kind of like Risk board game. The player can
+						choose any nation as a starting point. All countries are divided into smaller regions and each nation gets reinforcement units
+						at the start of their turn based on the number of regions the nation holds. Before battle the player positions his troops and then
+						in the actual battle the player has no control and the troops just charge against the enemy.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The biggest problem was creating an accurate world map where countries were divided into smaller regions. The solution required
+						multiple tools. First I downloaded geographical data from 
+						<a href="https://www.naturalearthdata.com">naturalearthdata.com</a> and a list of the world flags from somewhere
+						(Couldn't find the site anymore). Then I run the geographical world data through the
+						<a href="https://www.mapshaper.org">mapshaper.org</a> to get more simplified version of the map. Then I wrote a dozen of python
+						scripts for QGIS (a geographic information system application for editing geospatial data) to split the map into smaller regions
+						and to convert the world map data into a format I could use in Unity to generate the world map.</p>
+					</div>
+					<div class="column column-add">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/AVNazsZ8XvY?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/DdKh3BSFZ1k?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column column-add">
+						<h3>Dwarven Express</h3>
+						<p>A game where a dwarven wagon tries to carry mail and passengers through monster infested wastelands. The player can use
+						different kind of turrets and weapons to fend off the attackers.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The levels were procedurally generated so it wasn't easy to make them interesting and captivating.</p>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<h3>Floating islands</h3>
+						<p>The purpose of this project was to procedurally create a floating island.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The big problem was how to generate the island mesh programmatically. It took several hours to get it right. And of course
+						texturing the mesh and placing game objects like trees wasn't easy.</p>
+					</div>
+					<div class="column column-add">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/eAg6L53OQ98?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/qES22Ru-b90?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column column-add">
+						<h3>Age of Empires -style survival strategy game #1</h3>
+						<p>The goal was to make kind of like Age of empires with survival elements and zombies. Also maps should be procedurally 
+						generated.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The problem was how to move hundreds of units at the same time and keep high framerate. One of the solutions was to use the
+						same technique as in Age of Empires. So I created all the 3D models and animations in Blender and converted the 3D animations then
+						into sprite animations.
+						</p>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<h3>Age of Empires -style survival strategy game #2</h3>
+						<p>The goal was to make kind of like Age of empires with survival elements and 3D models. The twist here was that every villager would
+						have their own inventory and they could level up, so basically kind of like a role-playing game with a whole village. Also maps should
+						be procedurally generated.</p>
+						<h4>Development problems and solutions</h4>
+						<p>The big problem was how to generate the island mesh programmatically. It took several hours to get it right. And of course
+						texturing the mesh and placing game objects like trees wasn't easy.</p>
+					</div>
+					<div class="column column-add">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/D4KyZJaHJAk?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/3Z7LeRtgL0s?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="column column-add">
+						<h3>Anthill Wars</h3>
+						<p>A strategy game where the player needs to conquer enemy anthills. It is designed for mobile devices and
+						was published in App Store, but currently it's unavailable. Castles in War is built on top of this game.</p>
+						<h4>Development problems and solutions</h4>
+						<p>Same as in Castles in War.</p>
+					</div>
+				</div>
+				<div class="projects_holder">
+					<div class="column">
+						<h3>Lumberjack</h3>
+						<p>Inspired by the game called Bloons where a monkey throws darts to pop balloons. One of my first prototype game projects. 
+						The player plays as a lumberjack who cuts trees by throwing axes and other cutting tools. The player can buy more tools to cut
+						trees more effectively.</p>
+					</div>
+					<div class="column column-add">
+						<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/UYOtRTgabaw?rel=0" frameborder="0"
+						allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				</div>
 			</section>
 		</div>
@@ -77,5 +324,6 @@
 	<script src="js/cells-by-row.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/videoHandler.js"></script>
 </body>
 </html>
