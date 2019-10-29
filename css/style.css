@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'novecentosanswide';
+    src: url('../fonts/novecentosanswide-normal-webfont.eot');
+    src: url('../fonts/novecentosanswide-normal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecentosanswide-normal-webfont.woff') format('woff'),
+         url('../fonts/novecentosanswide-normal-webfont.ttf') format('truetype'),
+         url('../fonts/novecentosanswide-normal-webfont.svg#novecento_sans_widenormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'novecentosanswide';
+    src: url('../fonts/novecentosanswide-bold-webfont.eot');
+    src: url('../fonts/novecentosanswide-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecentosanswide-bold-webfont.woff') format('woff'),
+         url('../fonts/novecentosanswide-bold-webfont.ttf') format('truetype'),
+         url('../fonts/novecentosanswide-bold-webfont.svg#novecentosanswidebold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'novecento_sans_widebook';
+    src: url('../fonts/novecentosanswide-book-webfont.eot');
+    src: url('../fonts/novecentosanswide-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecentosanswide-book-webfont.woff') format('woff'),
+         url('../fonts/novecentosanswide-book-webfont.ttf') format('truetype'),
+         url('../fonts/novecentosanswide-book-webfont.svg#novecento_sans_widebook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'novecento_sans_widemedium';
+    src: url('../fonts/novecentosanswide-medium-webfont.eot');
+    src: url('../fonts/novecentosanswide-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/novecentosanswide-medium-webfont.woff') format('woff'),
+         url('../fonts/novecentosanswide-medium-webfont.ttf') format('truetype'),
+         url('../fonts/novecentosanswide-medium-webfont.svg#novecento_sans_widemedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #a4a7ac;
+    background: #28292b;
+}
+
+h1, h2, h3, h4, h5, p { 
+    margin-bottom: 1rem;
+}
+
+p + h2, p + h3, p + h4, p + h5 {
+    margin-top: 2rem;
+}
+a {
+    color: #fff;
+    transition: 0.15s;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+.about div {
+    padding: 50px;
+}
+
+.about-text {
+    border-left: 1px solid #a4a7ac;
+}
+
+.footer {
+    text-align: center;
+    background: #1d1d1d;
+    
+}
+.footer p {
+    margin-bottom: 0;
+    line-height: 2em;
+}
+.footer .contact-info {
+    text-align: center;
+    color: #a4a7ac;
+    padding: 1em;
+}
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.contact-info {
+    text-align: right;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+}
+
+.video-container {
+    margin-bottom: 30px;
+    /*    padding-bottom: 56.25%;*/
+}
+
+.video {
+    width: 100%;
+    /*height: 100%;
+    max-width: 100%;*/
+}
+
+.caption {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+header h1 {
+	color: #fff;
+    text-shadow: 1px 1px 15px #000;
+	font-family: 'novecentosanswide';
+	font-weight: bold;
+	text-transform: uppercase;
+    font-size: 67px;
+    letter-spacing: 3px;
+}
+
+header h2 {
+    color: #fff;
+    text-shadow: 1px 1px 15px #000;
+	font-family: 'novecento_sans_widebook';
+	text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container h1,h2,h3,h4 {
+    font-family: 'novecento_sans_widebook';
+	text-transform: uppercase;
+    color: #fff;
+}
+
+.container h2 {
+    font-size: 30px;
+}
+
+.container h3 {
+    font-size: 25px;
+}
+
+.container h4 {
+    font-size: 18px;
+}
+
+.progress{
+    margin: 0 0 27px;
+	background: #46484c;
+	height: 43px;
+    /*
+	overflow: hidden;
+	width: 100%;
+    margin: 0 0 3px 0;
+    */
+}
+
+.progress-bar {
+    text-align: left;
+	background: #50af6f;
+	text-transform:uppercase;
+    font-family: 'novecentosanswide';
+    font-weight: normal;
+	font-size: 18px;
+	padding: 0 0 0 20px;
+}
+
+.row {
+    margin-top: 50px;
+}
+
+.row ul {
+    margin: 0;
+}
+
+.row .order-md-1 {
+    text-align: right;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    max-height: 60vh;
+    background: black;
+}
+
+.hero-video {
+    margin-left: 50%;
+    min-width: 100%;
+    min-height: 60vh;
+    opacity: 0.6;
+    transform: translate(-50%, -18%);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 768px) {
+    .hero {
+        max-height: 100vh;
+    }
+
+    .hero-video {
+        width: auto;
+        max-width: none;
+        height: 100vh;
+        transform: translateX(-50%);
+        margin-left: 50%;
+    }
+
+    .container h3 {
+        margin-top: 20px;
+    }
+
+    .row .order-md-1 {
+        text-align: left;
+    }
+}
